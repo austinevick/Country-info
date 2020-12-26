@@ -39,7 +39,8 @@ class CountryDetailsSheet extends StatelessWidget {
                   countries.name,
                   style: TextStyle(fontSize: 20),
                 ),
-              )
+              ),
+              Text('Currency'),
             ],
           )),
     );
