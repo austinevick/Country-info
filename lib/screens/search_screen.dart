@@ -22,7 +22,6 @@ class _SearchScreenState extends State<SearchScreen> {
                         noItemsFoundWidget: Center(
                           child: Text('No item found'),
                         ),
-                        listContainerHeight: MediaQuery.of(context).size.height,
                         dataList: snapshot.data,
                         popupListItemBuilder: (countries) {
                           return PopupListItem(
@@ -61,7 +60,7 @@ class PopupListItem extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(8.0),
       child: Material(
-        elevation: 4.0,
+        // elevation: 4.0,
         borderRadius: BorderRadius.circular(4.0),
         child: ListTile(
           subtitle: Text(
@@ -96,7 +95,7 @@ class SelectedItemWidget extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(8.0),
       child: Material(
-        elevation: 4.0,
+        // elevation: 4.0,
         borderRadius: BorderRadius.circular(4.0),
         child: ListTile(
           subtitle: Text(

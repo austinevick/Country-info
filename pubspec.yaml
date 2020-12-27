@@ -35,6 +35,8 @@ dependencies:
   intl: ^0.16.1
   search_widget: ^1.0.2
   scroll_app_bar: ^1.0.2
+  connectivity: ^2.0.2
+  data_connection_checker: ^0.3.4
 
 dev_dependencies:
   flutter_test:
