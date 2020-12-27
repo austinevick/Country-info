@@ -6,15 +6,19 @@ class Countries {
   final List<Currencies> currencies;
   final List<Language> languages;
   final String flag;
-  Countries({
-    this.name,
-    this.capital,
-    this.population,
-    this.coordinate,
-    this.currencies,
-    this.languages,
-    this.flag,
-  });
+  final String region;
+  final String subregion;
+
+  Countries(
+      {this.name,
+      this.capital,
+      this.population,
+      this.coordinate,
+      this.currencies,
+      this.languages,
+      this.flag,
+      this.region,
+      this.subregion});
   factory Countries.fromMap(Map<String, dynamic> map) {
     List<Currencies> currencyList = [];
     List<Language> languageList = [];
@@ -28,6 +32,8 @@ class Countries {
         name: map['name'],
         capital: map['capital'],
         population: map['population'],
+        region: map['region'],
+        subregion: map['subregion'],
         coordinate: coordinateList,
         currencies: currencyList,
         languages: languageList,

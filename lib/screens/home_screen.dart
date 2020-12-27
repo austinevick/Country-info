@@ -19,6 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Random random = Random();
   final controller = ScrollController();
   static StreamSubscription<DataConnectionStatus> subscription;
+  bool isVisible = false;
 
   @override
   void initState() {
@@ -37,12 +38,12 @@ class _HomeScreenState extends State<HomeScreen> {
     super.dispose();
   }
 
-  bool isVisible = false;
   @override
   Widget build(BuildContext context) {
     return Consumer<CountryListProvider>(
       builder: (context, provider, child) => Scaffold(
         appBar: ScrollAppBar(
+          backgroundColor: Colors.red,
           actions: [
             !isVisible
                 ? FlatButton(
@@ -53,11 +54,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Text('Cancel',
                         style: TextStyle(color: Colors.white, fontSize: 16)),
                     onPressed: () => setState(() => isVisible = false)),
-            PopupMenuButton(
-                itemBuilder: (ctx) => [PopupMenuItem(child: Text('A'))])
           ],
           controller: controller,
-          title: Text('List of Countries'),
+          title: Text('Countries and their capital'),
         ),
         body: isVisible
             ? SearchScreen()
@@ -89,7 +88,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       )),
                               subtitle: Text(
                                 countries.capital,
-                                style: TextStyle(fontSize: 16),
+                                style: TextStyle(fontSize: 15),
                               ),
                               leading: CircleAvatar(
                                 backgroundColor: color,
